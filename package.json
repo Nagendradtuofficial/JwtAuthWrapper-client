@@ -3,12 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "main": "dist/main.jsx",
-  "module": "dist/main.jsx", 
+  "main": "./src/JWTAuthWrapper.jsx",
+  "module": "./src/JWTAuthWrapper.jsx", 
   "exports": {
     ".": {
-      "import": "./dist/main.jsx",
-      "require": "./dist/main.jsx"
+      "import": "./src/JWTAuthWrapper.jsx",
+      "require": "./src/JWTAuthWrapper.jsx"
     }
   },
   "scripts": {
