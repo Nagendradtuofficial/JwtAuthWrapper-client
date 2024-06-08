@@ -18,7 +18,7 @@ const Signup = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const url = "http://localhost:8080/api/signin" ;
+            const url = "https://jwtauthwrapper-server.onrender.com/api/signin" ;
             const {data: res }= await axios.post(url , data);
             localStorage.setItem("token", res.data);
             window.location = "/"

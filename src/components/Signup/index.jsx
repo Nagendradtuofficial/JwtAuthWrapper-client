@@ -21,7 +21,7 @@ const Signup = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const url = "http://localhost:8080/api/signup" ;
+            const url = "https://jwtauthwrapper-server.onrender.com/api/signup" ;
             const {data: res }= await axios.post(url , data);
             navigate("/login");
             console.log(res.message);
