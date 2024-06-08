@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Route , Routes , Navigate } from 'react-router-dom';
 import Signup from './components/Signup/index';
 import Login from './components/Login/index';
-import './App.css'
-function App(props) {
+import './JWTAuthWrapper.css'
+function JWTAuthWrapper(props) {
 
   const appType = props.appType; 
 
@@ -18,4 +18,4 @@ function App(props) {
   )
 }
 
-export default App
+export default JWTAuthWrapper
