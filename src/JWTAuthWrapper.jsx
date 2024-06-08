@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Route , Routes , Navigate } from 'react-router-dom';
 import Signup from './components/Signup/index';
 import Login from './components/Login/index';
-import {BrowserRouter} from 'react-router-dom'
 import './JWTAuthWrapper.css'
 
 export const logout_user = () => {
@@ -17,14 +16,13 @@ function JWTAuthWrapper(props) {
   const user = localStorage.getItem('token');
 
   return (
-    <BrowserRouter>
+    
       <Routes>
         {user && <Route path='/' exact element = {props.children} />}
         <Route path='/signup' exact element = {<Signup appType = {appType}/>} />
         <Route path='/login' exact element = {<Login appType = {appType}/>} />
         <Route path='/' exact element = {<Navigate replace to='/login'/>} />
       </Routes>
-    </BrowserRouter>
   )
 }
 
