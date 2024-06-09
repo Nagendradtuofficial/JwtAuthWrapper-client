@@ -3,20 +3,26 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "main": "./src/JWTAuthWrapper.jsx",
-  "module": "./src/JWTAuthWrapper.jsx", 
+  "main": "./src/jwtauthwrapper.jsx",
+  "module": "./src/jwtauthwrapper.jsx", 
   "exports": {
     ".": {
-      "import": "./src/JWTAuthWrapper.jsx",
-      "require": "./src/JWTAuthWrapper.jsx"
+      "import": "./src/jwtauthwrapper.jsx",
+      "require": "./src/jwtauthwrapper.jsx"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nagendradtuofficial/JwtAuthWrapper-client.git"
+  },
+  "types": "jwtAuthWrapper.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "author": "V V S D Nagendra Anala",
   "dependencies": {
     "axios": "^1.7.2",
     "react": "^18.2.0",

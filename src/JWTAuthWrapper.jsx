@@ -18,7 +18,7 @@ function JWTAuthWrapper(props) {
   return (
     
       <Routes>
-        {user && <Route path='/' exact element = {props.children} />}
+        {user && <Route path='/*' element = {props.children} />}
         <Route path='/signup' exact element = {<Signup appType = {appType}/>} />
         <Route path='/login' exact element = {<Login appType = {appType}/>} />
         <Route path='/' exact element = {<Navigate replace to='/login'/>} />
