@@ -1,0 +1,38 @@
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fade {
+    0%, 39%, 100% { opacity: 0.2; }
+    40% { opacity: 1; }
+}
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.spinner {
+    position: relative;
+    width: 80px;  /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
+}
+
+.spinner-blade {
+    position: absolute;
+    width: 4px;  /* Blade width */
+    height: 24px; /* Blade height */
+    background-color: black;
+    border-radius: 10px;  /* Slightly rounded corners */
+    top: 0px;
+    left: 50%;
+    transform-origin: 50% 40px;  /* Adjust for proper positioning */
+    transform: rotate(calc(var(--i) * -30deg));
+    animation: fade 1.4s linear infinite;
+    animation-delay: calc(var(--i) * -0.1s);
+}

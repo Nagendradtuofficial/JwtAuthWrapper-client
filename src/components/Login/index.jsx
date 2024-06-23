@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import styles from './login_styles.module.css' ;
 import { useState } from 'react';
 import axios from 'axios' ;
+import { Loader } from '../Loader';
 
 const Signup = (props) => {
     const [error , setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const [data , setData] = useState({
         email: "",
         password: "",
@@ -17,10 +19,12 @@ const Signup = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         try{
             const url = "https://jwtauthwrapper-server.onrender.com/api/signin" ;
             const {data: res }= await axios.post(url , data);
             localStorage.setItem("token", res.data);
+            setIsLoading(false);
             window.location = "/"
         }catch (err){
             if(err.response && 
@@ -29,12 +33,15 @@ const Signup = (props) => {
             ){
                 setError(err.response.data.message);
             }
+            setIsLoading(false);
         }
     }
 
     return(
         <div className={styles.login_container}>
-            <div className={styles.login_form_container}>
+            {isLoading && <Loader/>}
+
+            {!isLoading && <div className={styles.login_form_container}>
                 <div className={styles.left}>
                     <form className= {styles.form_container} onSubmit={handleSubmit}>
                         <h1>Login</h1>
@@ -75,7 +82,7 @@ const Signup = (props) => {
                         </button>
                     </Link>
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }
